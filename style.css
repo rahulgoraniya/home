@@ -93,7 +93,8 @@ blockquote p:last-child {
 /* Full size background image */
 html, #container, .inner { background-color:transparent;}
 html {
-  background:url('blackbackground.jpg') center center no-repeat fixed;
+  background-color: black; /* Sets the background to black */
+  color: white; /* Optional: Sets text color to white for better contrast */
   background-size:cover;
 }
 body {
