@@ -5,6 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Research</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Base reset */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        a {
+            color: #42a5f5;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: #1e1e1e;
+            border-bottom: 2px solid #424242;
+        }
+        header h1 {
+            font-size: 2.5rem;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #90caf9;
+        }
+        .about p, .research p, ul {
+            margin-bottom: 1rem;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #1e1e1e;
+            border-top: 2px solid #424242;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        .download-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #90caf9;
+            color: #90caf9;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .download-link:hover {
+            background-color: #90caf9;
+            color: #121212;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Research Portfolio</h1>
+    </header>
+    <main>
+        <section class="about">
+            <h2>About Me</h2>
+            <p>Hello! I am a computer science student passionate about algorithms, complexity theory, and graph theory. I am currently working on exciting research projects in theoretical computer science.</p>
+        </section>
+        <section class="research">
+            <h2>Current Research</h2>
+            <ul>
+                <li><strong>Title:</strong> Reduction of Matrix Tiling to Matrix Tiling <=</li>
+                <li><strong>Status:</strong> In Progress</li>
+                <li><strong>Description:</strong> I am exploring reductions in parameterized complexity for combinatorial problems.</li>
+            </ul>
+            <p>You can download my latest draft below:</p>
+            <a href="Example.pdf" download class="download-link">Download Current Research Paper</a>
+        </section>
+    </main>
+    <footer>
+        <p>Created by [Rahul]. © 2024.</p>
+    </footer>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Research</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -18,7 +127,7 @@
         <section class="research">
             <h2>Current Research</h2>
 <!--             <p>This section includes my ongoing research projects and papers.</p> -->
-            <ul>
+<!--             <ul>
                 <li><strong>Title:</strong> Reduction of Matrix Tiling to Matrix Tiling <=</li>
                 <li><strong>Status:</strong> In Progress</li>
                 <li><strong>Description:</strong>I am Exploring reductions in parameterized complexity for combinatorial problems.</li>
@@ -31,94 +140,5 @@
         <p>Created by [Rahul]. © 2024.</p>
     </footer>
 </body>
-</html>
+</html> -->
 
-<!-- <!doctype html>
-<html>
-  <head>
-    <!-- Page setup -->
-<!--     <style>
-body {
-    background-image: url('blackbackground.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-</style>
-    <meta charset="utf-8">
-    <title>Rahul's Home Page</title>
-    <meta name="description" content="A brief description of your site for search engines">
-    <meta name="author" content="Information about the author here">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/> -->
-<!--     <link rel="icon" type="image/png" href="favicon.png">
-  
-    <!-- Stylesheets -->
-    <!-- Reset default styles and add support for google fonts -->
-<!--     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
-   
-    <!-- Custom styles -->
-<!--     <link href="style.css" rel="stylesheet" type="text/css" /> -->
-
-    <!-- jQuery -->
-<!--     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>     -->
-
-    <!-- Want to add Bootstrap? -->
-    <!-- Visit: https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
-    
-<!--   </head> -->
-  
-<!--   <body>
-
-    <header id="header">
-      <img src="logo.jpg">
-      <h1>Rahul's Home Page</h1>
-       -->
-      <!-- Menu link fragment #id should match a div id. Example: <a href="#home"> links to <div id="home"></div>  -->
-<!--       <ul class="main-menu">
-        <li><a href="#home">home</a></li>
-        <li><a href="#about">about</a></li>
-        <li><a href="#contact">contact</a></li>
-      </ul>                 
-    </header>
-    --> 
-<!--     <div id="container">
-      <div class="inner">
-        <div id="content"> 
-          
-          <div id="home" class="content-region hide">
-            <h2>Home</h2>
-            <p>
-              This is a simple website template published with Github Pages. <a href="https://github.com/cpl-makerlab/simple-website-template">Fork this repository</a> to create your own site!
-            </p>
-          </div>
-          
-          <div id="about" class="content-region hide">
-            <h2>About</h2>
-            <p>
-              Sed tempus urna et pharetra pharetra massa massa ultricies. Porttitor rhoncus dolor purus non enim praesent. Id aliquet risus feugiat in ante metus dictum. 
-            </p>
-          </div>
-          
-          <div id="contact" class="content-region hide">
-            <h2>Contact</h2>
-            <p>
-              Pellentesque nec nam aliquam sem et tortor consequat. Quisque sagittis purus sit amet volutpat consequat. Magna eget est lorem ipsum dolor. 
-            </p>
-          </div>
-          
-        </div>
-      </div> -->
-<!--     </div>
-
-    <footer>  
-      Footer region
-    </footer> -->
-    
-    <!-- Load additional JS scripts here -->
-<!--     <script type="text/javascript" src="script.js"></script>
-     -->
-<!--   </body>
-</html> 
- -->
