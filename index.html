@@ -55,6 +55,14 @@
             color: #90caf9;
             border-color: #90caf9;
         }
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+/*             align-items: flex-start; */
+            margin-top: 2rem;
+            flex-direction: column;
+        }
+
         main {
             max-width: 800px;
 /*             margin: 2rem auto; */
@@ -97,6 +105,18 @@
         h2 {
            margin-top: 0; /* Avoid unnecessary top margin if not needed */
          }
+        .image-container {
+           max-width: 35%;
+           display: flex;
+           justify-content: flex-end;
+          }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px; /* Optional rounded corners */
+         }
+
         iframe {
             width: 100%;
             height: 500px;
@@ -112,7 +132,25 @@
         <li><a href="CV.pdf" target="_blank">View CV</a></li>
     </ul>
 </nav>
-<main>
+    <main>
+    <div class="content-container">
+        <div class="text-content">
+            <h1>Rahul Goraniya</h1>
+            <p>Hello! I am a computer science student passionate about algorithms, complexity theory, and graph theory. I am currently working on exciting research projects in theoretical computer science.</p>
+            <h2>Current Research</h2>
+            <p><strong>Title:</strong> Reduction of Matrix Tiling to Matrix Tiling ≤</p>
+            <p><strong>Status:</strong> In Progress</p>
+            <p><strong>Description:</strong> I am exploring reductions in parameterized complexity for combinatorial problems.</p>
+            <p>You can download my latest draft below or preview it directly on the page:</p>
+            <button>Download</button>
+            <button>Preview</button>
+        </div>
+        <div class="image-container">
+            <img src="image.png" alt="Your Photo">
+        </div>
+    </div>
+</main>
+<!-- <main>
     <section class="about">
         <h2>Rahul Goraniya</h2>
         <p>Hello! I am a computer science student passionate about algorithms, complexity theory, and graph theory. I am currently working on exciting research projects in theoretical computer science.</p>
@@ -131,7 +169,7 @@
             <iframe src="Mt_Final.pdf"></iframe>
         </div>
     </section>
-</main>
+</main> -->
 <script>
     function showPreview() {
         const previewDiv = document.getElementById('pdf-preview');
