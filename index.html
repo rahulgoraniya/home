@@ -54,15 +54,6 @@
             color: #90caf9;
             border-color: #90caf9;
         }
-        header {
-            text-align: center;
-            padding: 2rem 0;
-/*             background-color: #1e1e1e;
-            border-bottom: 1px solid #424242; */
-        }
-/*         header h1 {
-            font-size: 2.5rem;
-        } */
         main {
             max-width: 800px;
             margin: 2rem auto;
@@ -86,17 +77,7 @@
         ul li {
             margin-bottom: 0.5rem;
         }
-        footer {
-            text-align: center;
-            padding: 1rem 0;
-            background-color: #1e1e1e;
-            border-top: 2px solid #424242;
-        }
-        footer p {
-            margin: 0;
-            font-size: 0.9rem;
-        }
-        .download-link .preview-link {
+        .download-link, .preview-link {
             display: inline-block;
             margin-top: 1rem;
             padding: 0.5rem 1rem;
@@ -104,8 +85,10 @@
             color: #90caf9;
             border-radius: 5px;
             transition: all 0.3s ease;
+            text-align: center;
+            cursor: pointer;
         }
-        .download-link:hover .preview-link:hover {
+        .download-link:hover, .preview-link:hover {
             background-color: #90caf9;
             color: #121212;
         }
@@ -116,25 +99,56 @@
             border-radius: 5px;
             margin-top: 1rem;
         }
-        img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
     </style>
 </head>
 <body>
-<!--     <header>  --> <nav>
+<nav>
+    <ul>
+        <li><a href="#index">About Me</a></li>
+        <li><a href="CV.pdf" target="_blank">View CV</a></li>
+    </ul>
+</nav>
+<main>
+    <section class="about">
+        <h2>Rahul Goraniya</h2>
+        <p>Hello! I am a computer science student passionate about algorithms, complexity theory, and graph theory. I am currently working on exciting research projects in theoretical computer science.</p>
+    </section>
+    <section class="research">
+        <h2>Current Research</h2>
         <ul>
-            <li><a href="#index">About Me</a></li>
-<!--             <li><a href="#research">Research</a></li> -->
-            <li><a href="CV.pdf" target="_blank">View CV</a></li>
+            <li><strong>Title:</strong> Reduction of Matrix Tiling to Matrix Tiling ≤</li>
+            <li><strong>Status:</strong> In Progress</li>
+            <li><strong>Description:</strong> I am exploring reductions in parameterized complexity for combinatorial problems.</li>
         </ul>
-    </nav>
+        <p>You can download my latest draft below or preview it directly on the page:</p>
+        <a href="Mt_Final.pdf" download class="download-link">Download</a>
+        <button class="preview-link" onclick="showPreview()">Preview</button>
+        <div id="pdf-preview" style="display: none;">
+            <iframe src="Mt_Final.pdf"></iframe>
+        </div>
+    </section>
+</main>
+<script>
+    function showPreview() {
+        const previewDiv = document.getElementById('pdf-preview');
+        previewDiv.style.display = previewDiv.style.display === 'none' ? 'block' : 'none';
+    }
+</script>
+</body>
+</html>
+
+<!-- <!--     <header>  -->  
+<!--         <ul>
+            <li><a href="#index">About Me</a></li> -->
+<!--             <li><a href="#research">Research</a></li> -->
+<!--             <li><a href="CV.pdf" target="_blank">View CV</a></li>
+        </ul>
+    </nav> -->
 <!--     </header> -->
 <!--     <header> -->
 <!--         <h1>My Research Portfolio</h1> -->
 <!--     </header> -->
-    <main>
+<!--     <main>
         <section class="about">
             <h2>Rahul Goraniya</h2>
             <p>Hello! I am a computer science student passionate about algorithms, complexity theory, and graph theory. I am currently working on exciting research projects in theoretical computer science.</p>
@@ -153,12 +167,12 @@
             <iframe src="Mt_Final.pdf"></iframe>
         </div>
         </section>
-    </main>
+    </main> -->
 <!--     <footer>
         <p>Created by [Rahul]. © 2024.</p>
     </footer> -->
-</body>
-</html>
+<!-- </body>
+</html> -->
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
