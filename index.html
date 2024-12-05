@@ -28,7 +28,6 @@
             background-color: #1e1e1e;
             border-bottom: 1px solid #424242;
             z-index: 1000;
-            padding: 0.5rem 0;
         }
         nav ul {
             list-style: none;
@@ -55,19 +54,10 @@
             color: #90caf9;
             border-color: #90caf9;
         }
-        .content-container {
-            display: flex;
-            justify-content: space-between;
-/*             align-items: flex-start; */
-            margin-top: 2rem;
-            flex-direction: column;
-        }
-
         main {
             max-width: 800px;
-             margin: 2rem auto; 
+            margin: 2rem auto;
             padding: 0 1rem;
-            margin: 5rem auto 2rem;
         }
         section {
             margin-bottom: 2rem;
@@ -87,7 +77,7 @@
         ul li {
             margin-bottom: 0.5rem;
         }
-        .download-link, .view-link {
+        .download-link, .preview-link {
             display: inline-block;
             margin-top: 1rem;
             padding: 0.5rem 1rem;
@@ -98,14 +88,10 @@
             text-align: center;
             cursor: pointer;
         }
-        .download-link:hover, .view-link:hover {
+        .download-link:hover, .preview-link:hover {
             background-color: #90caf9;
             color: #121212;
         }
-        h2 {
-           margin-top: 0; /* Avoid unnecessary top margin if not needed */
-         }
-
         iframe {
             width: 100%;
             height: 500px;
@@ -118,10 +104,10 @@
 <body>
 <nav>
     <ul>
+        <li><a href="#index">About Me</a></li>
         <li><a href="CV.pdf" target="_blank">View CV</a></li>
     </ul>
 </nav>
-
 <main>
     <section class="about">
         <h2>Rahul Goraniya</h2>
@@ -136,7 +122,6 @@
         </ul>
         <p>You can download my latest draft below or preview it directly on the page:</p>
         <a href="Mt_Final.pdf" download class="download-link">Download</a>
-<!--         <a href="Mt_Final.pdf" target="_blank">View</a> -->
         <button class="preview-link" onclick="showPreview()">Preview</button>
         <div id="pdf-preview" style="display: none;">
             <iframe src="Mt_Final.pdf"></iframe>
@@ -151,6 +136,7 @@
 </script>
 </body>
 </html>
+
 
 <!-- <!--     <header>  -->  
 <!--         <ul>
