@@ -9,12 +9,13 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #ffffff;
+            background-color: #ffffff;
+            color: #000000;
             line-height: 1.6;
         }
         a {
-            color: #42a5f5;
+             color: #d32f2f;
+/*             color: #42a5f5; */
             text-decoration: none;
         }
         a:hover {
@@ -51,8 +52,10 @@
             transition: all 0.3s ease;
         }
         nav a:hover {
-            color: #90caf9;
-            border-color: #90caf9;
+            color: #ffffff;
+            background-color: #d32f2f;
+/*             color: #90caf9;
+            border-color: #90caf9; */
         }
         .toggle-container {
             display: flex;
@@ -127,15 +130,18 @@
             display: inline-block;
             margin-top: 1rem;
             padding: 0.5rem 1rem;
-            border: 1px solid #90caf9;
-            color: #90caf9;
+            border: 1px solid #d32f2f;  /* Red border */
+            color: #d32f2f;  /* Red text */
+/*             border: 1px solid #90caf9;
+            color: #90caf9; */
             border-radius: 5px;
             transition: all 0.3s ease;
             text-align: center;
             cursor: pointer;
         }
         .download-link:hover, .preview-link:hover {
-            background-color: #90caf9;
+            background-color: #d32f2f;
+/*             background-color: #90caf9; */
             color: #121212;
         }
         iframe {
@@ -145,10 +151,38 @@
             border-radius: 5px;
             margin-top: 1rem;
         }
-        .dark{
-            background-color: #222;
-            color: #e6e6e6;
+        /* Dark Mode */
+        .dark {
+            background-color: #222;  /* Dark background */
+            color: #e6e6e6;  /* Light text */
         }
+        .dark a {
+            color: #90caf9;  /* Light blue links */
+        }
+        .dark nav {
+            background-color: #333;  /* Dark nav bar */
+            border-bottom: 1px solid #444;
+        }
+        .dark nav a {
+            color: #e6e6e6;  /* Light text in nav */
+        }
+        .dark .download-link, .dark .preview-link {
+            border-color: #90caf9;  /* Light blue border in dark mode */
+            color: #90caf9;  /* Light blue text */
+        }
+        .dark .download-link:hover, .dark .preview-link:hover {
+            background-color: #90caf9;
+            color: #121212;
+        }
+        .dark iframe {
+            border: 1px solid #444;  /* Dark iframe border */
+        }
+/*         .dark{
+             background-color: #121212;
+             color: #ffffff;
+/*             background-color: #222;
+            color: #e6e6e6; */
+/*         } */ 
     </style>
 </head>
 <body>
