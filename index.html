@@ -99,13 +99,22 @@
             transform: translateX(26px);
         }
         main {
+            display: flex;
+            align-items: center; /* Vertically centers the image and text */
+            gap: 2rem; /* Adds space between the image and text */
+            margin: 5rem auto 2rem; /* Adjusts margin for positioning */
+            max-width: 800px; /* Limits the width of the container */
+            padding: 0 1rem;
+        }
+/*         main {
+            
             max-width: 800px;
             padding: 0 1rem;
             margin: 5rem auto 2rem;
             display: flex;
             gap: 2rem;
-        }
-        section {
+        } */
+         
             margin-bottom: 2rem;
         }
         section h2 {
@@ -201,11 +210,15 @@
 </nav>
 
 <!-- Profile Picture Section -->
-<div style="padding-top: 4rem; display: flex; justify-content: center;">
+<!-- <div style="padding-top: 4rem; display: flex; justify-content: center;">
     <img src="profile_picture.jpg" alt="Profile Picture" class="profile-image">
-</div>
+</div> -->
 
 <main>
+     <div>
+        <img src="profile_picture.jpg" alt="Profile Picture" class="profile-image">
+    </div>
+     <div>
     <section class="about">
         <h2>Rahul Goraniya</h2>
         <p>Hello! I am a computer science student passionate about algorithms, complexity theory, and graph theory. I am currently working on exciting research project for my undergraduate thesis in theoretical computer science.</p>
@@ -224,6 +237,7 @@
             <iframe src="Mt_l_reduction.pdf"></iframe>
         </div>
     </section>
+  </div>
 </main>
 
 <script>
