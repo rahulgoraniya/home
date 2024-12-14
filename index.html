@@ -102,12 +102,17 @@
             border-radius: 5px;
             margin-top: 1rem;
         }
+        .dark{
+            background-color: #222;
+            color: #e6e6e6;
+        }
     </style>
 </head>
 <body>
 <nav>
     <ul>
         <li><a href="CV.pdf" target="_blank">View CV</a></li>
+        <li></li> onclick="myFunction()">Switch mode</li> 
     </ul>
 </nav>
 <main>
@@ -136,5 +141,11 @@
         previewDiv.style.display = previewDiv.style.display === 'none' ? 'block' : 'none';
     }
 </script>
+    <script>
+        function myFunction() {
+            let element = document.body;
+            element.classList.toggle("dark");
+        }
+    </script>
 </body>
 </html>
