@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Research</title>
     <style>
-        /* Light Mode Styles (default) */
+        /* Default (Light Mode) Styles */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -118,8 +118,8 @@
 
         /* Dark Mode Styles */
         .dark-mode body {
-            background-color: #121212;
-            color: #e6e6e6;
+            background-color: #121212;  /* Dark background */
+            color: #e6e6e6;  /* Light text */
         }
 
         .dark-mode h2 {
@@ -131,7 +131,7 @@
         }
 
         .dark-mode nav {
-            background-color: #1e1e1e;
+            background-color: #1e1e1e;  /* Dark background */
             border-bottom: 1px solid #424242;
         }
 
@@ -238,7 +238,7 @@
         // Get the current theme from localStorage or system preference
         let currentTheme = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         
-        // Apply the theme
+        // Apply the theme to body class
         if (currentTheme === 'dark') {
             document.body.classList.add('dark-mode');
         } else {
@@ -269,6 +269,7 @@
     </script>
 </body>
 </html>
+
 
 
 <!-- <!DOCTYPE html>
