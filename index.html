@@ -102,6 +102,8 @@
             max-width: 800px;
             padding: 0 1rem;
             margin: 5rem auto 2rem;
+            display: flex;
+            gap: 2rem;
         }
         section {
             margin-bottom: 2rem;
@@ -175,6 +177,14 @@
         .dark iframe {
             border: 1px solid #444;
         }
+        /* Styling for the image */
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-top: 1.5rem;
+        }
     </style>
 </head>
 <body>
@@ -189,6 +199,12 @@
         </li>
     </ul>
 </nav>
+
+<!-- Profile Picture Section -->
+<div style="padding-top: 4rem; display: flex; justify-content: center;">
+    <img src="your-picture.jpg" alt="Profile Picture" class="profile-image">
+</div>
+
 <main>
     <section class="about">
         <h2>Rahul Goraniya</h2>
@@ -209,6 +225,7 @@
         </div>
     </section>
 </main>
+
 <script>
     // Detect user's system preference
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
