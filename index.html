@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Research</title>
     <style>
-        /* Default Light Mode */
+        /* Light Mode Styles (default) */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -117,48 +117,32 @@
         }
 
         /* Dark Mode Styles */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #121212;
-                color: #e6e6e6;
-            }
-
-            h2 {
-                color: #42a5f5;  /* Blue headings in dark mode */
-            }
-
-            a {
-                color: #90caf9;  /* Light blue links in dark mode */
-            }
-
-            nav {
-                background-color: #1e1e1e;
-                border-bottom: 1px solid #424242;
-            }
-
-            .download-link, .preview-link {
-                border-color: #90caf9;
-                color: #90caf9;
-            }
-
-            .download-link:hover, .preview-link:hover {
-                background-color: #90caf9;
-                color: #121212;
-            }
-        }
-
-        /* Dark Mode Override for manually set theme */
-        .dark-mode {
+        .dark-mode body {
             background-color: #121212;
             color: #e6e6e6;
         }
 
         .dark-mode h2 {
-            color: #42a5f5;
+            color: #42a5f5;  /* Blue headings in dark mode */
         }
 
         .dark-mode a {
+            color: #90caf9;  /* Light blue links in dark mode */
+        }
+
+        .dark-mode nav {
+            background-color: #1e1e1e;
+            border-bottom: 1px solid #424242;
+        }
+
+        .dark-mode .download-link, .dark-mode .preview-link {
+            border-color: #90caf9;
             color: #90caf9;
+        }
+
+        .dark-mode .download-link:hover, .dark-mode .preview-link:hover {
+            background-color: #90caf9;
+            color: #121212;
         }
 
         /* Switch styling (toggle button) */
@@ -211,7 +195,6 @@
         input:checked + .slider:before {
             transform: translateX(26px);
         }
-
     </style>
 </head>
 <body>
@@ -256,7 +239,11 @@
         let currentTheme = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         
         // Apply the theme
-        document.body.classList.add(currentTheme + '-mode');
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.add('light-mode');
+        }
 
         // Listen for toggle changes
         const toggle = document.getElementById('theme-toggle');
@@ -282,6 +269,7 @@
     </script>
 </body>
 </html>
+
 
 <!-- <!DOCTYPE html>
 <html lang="en">
