@@ -190,8 +190,7 @@
         .profile-image {
             width: 200px;
             height: 300px;
-            border-radius: 50%;
-            object-fit: cover;
+            object-fit: cover; /* Ensures the image covers the dimensions without distortion */
             margin-top: 1.5rem;
         }
     </style>
@@ -214,7 +213,7 @@
     <img src="profile_picture.jpg" alt="Profile Picture" class="profile-image">
 </div> -->
 
-<main>
+<main tyle="display: flex; align-items: flex-start; gap: 2rem;">
      <div>
         <img src="profile_picture.jpg" alt="Profile Picture" class="profile-image">
     </div>
