@@ -15,8 +15,8 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f2f2f2;
-            color: #333;
+            background-color: #E8F1F2; /* Pale Blue */
+            color: #2D3748; /* Dark Slate Gray */
             line-height: 1.6;
             transition: all 0.3s ease;
         }
@@ -26,8 +26,8 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #3f51b5; /* Indigo */
-            color: #fff;
+            background-color: #1E3A8A; /* Dark Blue */
+            color: #F7F7F7; /* Light Gray */
             padding: 0.5rem 2rem;
             display: flex;
             justify-content: space-between;
@@ -43,14 +43,14 @@
         }
 
         nav a {
-            color: #fff;
+            color: #F7F7F7; /* Light Gray */
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: #ffb300; /* Amber */
+            color: #38BDF8; /* Sky Blue */
         }
 
         .toggle-container {
@@ -97,8 +97,8 @@
         section h2 {
             font-size: 1.8rem;
             margin-bottom: 0.5rem;
-            color: #3f51b5; /* Indigo */
-            border-bottom: 2px solid #ffb300; /* Amber */
+            color: #1E3A8A; /* Dark Blue */
+            border-bottom: 2px solid #38BDF8; /* Sky Blue */
             display: inline-block;
             padding-bottom: 0.5rem;
         }
@@ -113,7 +113,7 @@
             display: inline-block;
             margin-top: 1rem;
             padding: 0.5rem 1rem;
-            background-color: #3f51b5; /* Indigo */
+            background-color: #1E3A8A; /* Dark Blue */
             color: #fff;
             border-radius: 5px;
             text-decoration: none;
@@ -122,7 +122,7 @@
         }
 
         .download-link:hover, .preview-link:hover, .cv-view-link:hover {
-            background-color: #ffb300; /* Amber */
+            background-color: #38BDF8; /* Sky Blue */
             color: #333;
             transform: translateY(-2px);
         }
@@ -211,7 +211,7 @@
         }
 
         input:checked + .slider {
-            background-color: #3f51b5; /* Indigo */
+            background-color: #1E3A8A; /* Dark Blue */
         }
 
         input:checked + .slider:before {
@@ -281,10 +281,9 @@
         }
 
         function showPreview() {
-            const preview = document.getElementById("pdf-preview");
-            preview.style.display = preview.style.display === "none" ? "block" : "none";
+            const pdfPreview = document.getElementById("pdf-preview");
+            pdfPreview.style.display = pdfPreview.style.display === "none" ? "block" : "none";
         }
     </script>
 </body>
 </html>
-
