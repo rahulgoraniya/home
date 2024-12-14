@@ -124,40 +124,37 @@
 </head>
 <body>
     <nav>
+    <ul>
+        <li><a href="CV.pdf" target="_blank" class="cv-view-link">View CV</a></li> -->
+        <li><a href="CV.pdf" target="_blank">View CV</a></li>
+        <li class="toggle-container">
+            <label class="switch">
+                <input type="checkbox" id="dark-mode-toggle" onclick="myFunction()">
+                <span class="slider"></span>
+            </label>
+        </li>
+    </ul>
+</nav>
+<main>
+    <section class="about">
+        <h2>Rahul Goraniya</h2>
+        <p>Hello! I am a computer science student passionate about algorithms, complexity theory, and graph theory. I am currently working on exciting research project for my undergraduate thesis in theoretical computer science.</p>
+    </section>
+    <section class="research">
+        <h2>Current Research</h2>
         <ul>
-            <li><a href="CV.pdf" target="_blank">View CV</a></li>
-            <li>
-                <!-- Toggle Button -->
-                <div class="toggle-container">
-                    <label class="switch">
-                        <input type="checkbox" id="theme-toggle">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-            </li>
+            <li><strong>Title:</strong> Reduction of Matrix Tiling to Matrix Tiling ≤</li>
+            <li><strong>Status:</strong> In Progress</li>
+            <li><strong>Description:</strong> I am exploring reductions in parameterized complexity for combinatorial problems, trying to establish lower bounds for them.</li>
         </ul>
-    </nav>
-
-    <main>
-        <section class="about">
-            <h2>Rahul Goraniya</h2>
-            <p>Hello! I am a computer science student passionate about algorithms, complexity theory, and graph theory.</p>
-        </section>
-        <section class="research">
-            <h2>Current Research</h2>
-            <ul>
-                <li><strong>Title:</strong> Reduction of Matrix Tiling to Matrix Tiling ≤</li>
-                <li><strong>Status:</strong> In Progress</li>
-                <li><strong>Description:</strong> Exploring reductions in parameterized complexity for combinatorial problems...</li>
-            </ul>
-             <p>You can download my latest draft below or preview it directly on the page:</p>
-             <a href="Mt_l_reduction.pdf" download class="download-link">Download</a>
-             <a class="preview-link" onclick="showPreview()">Preview</a>
-             <div id="pdf-preview" style="display: none;">
+        <p>You can download my latest draft below or preview it directly on the page:</p>
+        <a href="Mt_l_reduction.pdf" download class="download-link">Download</a>
+        <a class="preview-link" onclick="showPreview()">Preview</a>
+        <div id="pdf-preview" style="display: none;">
             <iframe src="Mt_l_reduction.pdf"></iframe>
-        </div
-        </section>
-    </main>
+        </div>
+    </section>
+</main> 
 
     <script>
         // Get the current theme from localStorage or system preference
