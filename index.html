@@ -143,7 +143,7 @@
         .download-link:hover, .preview-link:hover, .cv-view-link:hover {
             background-color: #d32f2f;
 /*             background-color: #90caf9; */
-            color: #121212;
+            color: #ffffff;
         }
         iframe {
             width: 100%;
@@ -189,7 +189,8 @@
 <body>
 <nav>
     <ul>
-        <li><a href="CV.pdf" target="_blank">View CV</a></li>
+        <a href="CV.pdf" target="_blank" class="cv-view-link">View CV</a>
+<!--         <li><a href="CV.pdf" target="_blank">View CV</a></li> -->
          <li class="toggle-container">
             <label class="switch">
                 <input type="checkbox" id="dark-mode-toggle" onclick="myFunction()">
