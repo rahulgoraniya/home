@@ -4,6 +4,193 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Research</title>
+    <style>
+        /* Default Light Mode */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+        }
+        h2 {
+            color: #d32f2f;  /* Red headings in light mode */
+        }
+
+        /* Links and buttons in light mode */
+        a {
+            color: #d32f2f;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Dark Mode Styles */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #121212;  /* Dark background */
+                color: #e6e6e6;  /* Light text in dark mode */
+            }
+
+            h2 {
+                color: #42a5f5;  /* Blue headings in dark mode */
+            }
+
+            a {
+                color: #90caf9;  /* Light blue links in dark mode */
+            }
+        }
+
+        /* Override for manually set theme using .dark class */
+        .dark-mode {
+            background-color: #121212;
+            color: #e6e6e6;
+        }
+
+        .dark-mode h2 {
+            color: #42a5f5;
+        }
+
+        .dark-mode a {
+            color: #90caf9;
+        }
+
+        /* Light mode when dark mode class is not present */
+        .light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .light-mode h2 {
+            color: #d32f2f;
+        }
+
+        .light-mode a {
+            color: #d32f2f;
+        }
+
+        /* Switch styling (toggle button) */
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .switch {
+            position: relative;
+            width: 50px;
+            height: 24px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 50px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            border-radius: 50px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+        }
+
+        input:checked + .slider {
+            background-color: #4caf50;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="CV.pdf" target="_blank">View CV</a></li>
+            <li>
+                <!-- Toggle Button -->
+                <div class="toggle-container">
+                    <label class="switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="about">
+            <h2>Rahul Goraniya</h2>
+            <p>Hello! I am a computer science student passionate about algorithms, complexity theory, and graph theory.</p>
+        </section>
+        <section class="research">
+            <h2>Current Research</h2>
+            <ul>
+                <li><strong>Title:</strong> Reduction of Matrix Tiling to Matrix Tiling ≤</li>
+                <li><strong>Status:</strong> In Progress</li>
+                <li><strong>Description:</strong> Exploring reductions in parameterized complexity for combinatorial problems...</li>
+            </ul>
+             <p>You can download my latest draft below or preview it directly on the page:</p>
+             <a href="Mt_l_reduction.pdf" download class="download-link">Download</a>
+             <a class="preview-link" onclick="showPreview()">Preview</a>
+             <div id="pdf-preview" style="display: none;">
+            <iframe src="Mt_l_reduction.pdf"></iframe>
+        </div
+        </section>
+    </main>
+
+    <script>
+        // Get the current theme from localStorage or system preference
+        let currentTheme = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        
+        // Apply the theme
+        document.body.classList.add(currentTheme + '-mode');
+
+        // Listen for toggle changes
+        const toggle = document.getElementById('theme-toggle');
+        toggle.checked = currentTheme === 'dark';
+
+        toggle.addEventListener('change', function() {
+            // Toggle between light and dark modes
+            if (this.checked) {
+                document.body.classList.remove('light-mode');
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.classList.remove('dark-mode');
+                document.body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Research</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -184,21 +371,21 @@
         }
         .dark iframe {
             border: 1px solid #444;  /* Dark iframe border */
-        }
-/*         .dark{
+        } -->
+<!-- /*         .dark{
              background-color: #121212;
              color: #ffffff;
 /*             background-color: #222;
             color: #e6e6e6; */
 /*         } */ 
-    </style>
-</head>
+   </style>  -->
+<!-- </head>
 <body>
 <nav>
     <ul>
-        <li><a href="CV.pdf" target="_blank" class="cv-view-link">View CV</a></li>
+        <li><a href="CV.pdf" target="_blank" class="cv-view-link">View CV</a></li> -->
 <!--         <li><a href="CV.pdf" target="_blank">View CV</a></li> -->
-         <li class="toggle-container">
+<!--          <li class="toggle-container">
             <label class="switch">
                 <input type="checkbox" id="dark-mode-toggle" onclick="myFunction()">
                 <span class="slider"></span>
@@ -239,3 +426,4 @@
    
 </body>
 </html>
+ -->
