@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Research</title>
+    <title>My Research Portfolio</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
-       
+        /* General Reset */
         * {
             margin: 0;
             padding: 0;
@@ -15,10 +17,15 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8f9fa;
+            font-family: 'Inter', sans-serif;
             color: #333;
-            line-height: 1.6;
+            background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
             transition: all 0.3s ease;
         }
 
@@ -27,260 +34,184 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #004d40;
-            color: #fff;
-            padding: 0.5rem 2rem;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 0.8rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         nav a {
-            color: #fff;
             text-decoration: none;
             font-weight: 600;
+            color: #004d40;
             transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: #ffab91;
-        }
-
-        .toggle-container {
-            display: flex;
-            align-items: center;
+            color: #ff7043;
         }
 
         /* Main Content */
         main {
-            margin: 6rem auto 2rem;
-            max-width: 1000px;
-            padding: 1rem;
+            margin: 5rem auto 2rem;
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
             justify-content: center;
+            align-items: flex-start;
+            padding: 2rem;
         }
 
-        .profile-image {
-            width: 200px;
-            height: 300px;
+        .card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 2rem;
+            max-width: 350px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 1s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
             object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            border: 4px solid #004d40;
         }
 
-        .content {
-            flex: 1 1 300px;
-        }
-
-        section {
-            margin-bottom: 1.5rem;
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        section:hover {
-            transform: translateY(-5px);
-        }
-
-        section h2 {
-            font-size: 1.8rem;
+        h1 {
+            font-size: 2rem;
             margin-bottom: 0.5rem;
             color: #004d40;
-            border-bottom: 2px solid #ffab91;
-            display: inline-block;
-            padding-bottom: 0.5rem;
         }
 
-        section p, section ul {
+        h2 {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            color: #333;
+        }
+
+        p {
             font-size: 1rem;
             color: #555;
         }
 
-        /* Buttons */
-        .download-link, .preview-link, .cv-view-link {
+        a.button {
             display: inline-block;
             margin-top: 1rem;
-            padding: 0.5rem 1rem;
+            padding: 0.7rem 1.5rem;
             background-color: #004d40;
             color: #fff;
-            border-radius: 5px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
-        .download-link:hover, .preview-link:hover, .cv-view-link:hover {
-            background-color: #ffab91;
-            color: #333;
-            transform: translateY(-2px);
+        a.button:hover {
+            background-color: #ff7043;
+            color: #fff;
+            transform: scale(1.05);
         }
 
         iframe {
             width: 100%;
-            height: 500px;
+            height: 300px;
             border: none;
             border-radius: 10px;
             margin-top: 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Fade In Animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Dark Mode */
         .dark {
-            background-color: #121212;
+            background: linear-gradient(135deg, #263238, #37474f);
             color: #e0e0e0;
         }
 
         .dark nav {
-            background-color: #222;
+            background: rgba(0, 0, 0, 0.6);
         }
 
-        .dark nav a {
-            color: #ffab91;
-        }
-
-        .dark section {
-            background-color: #333;
+        .dark .card {
+            background: rgba(0, 0, 0, 0.5);
             color: #e0e0e0;
         }
 
-        .dark section h2 {
-            color: #ffab91;
-        }
-
-        .dark .download-link, .dark .preview-link {
-            background-color: #ffab91;
-            color: #333;
-        }
-
-        .dark .download-link:hover, .dark .preview-link:hover {
-            background-color: #e57373;
-        }
-
-        /* Toggle Switch */
-        .switch {
-            position: relative;
-            width: 50px;
-            height: 24px;
-        }
-
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: 0.4s;
-            border-radius: 50px;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 16px;
-            width: 16px;
-            border-radius: 50px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: 0.4s;
-        }
-
-        input:checked + .slider {
-            background-color: #004d40;
-        }
-
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            main {
-                flex-direction: column;
-                align-items: center;
-            }
-            .profile-image {
-                margin: 0 auto 1rem;
-            }
+        .dark h1 {
+            color: #ff7043;
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
-        <div><strong>My Research</strong></div>
+        <div><strong>My Portfolio</strong></div>
         <ul>
-            <li><a href="CV.pdf" target="_blank" class="cv-view-link">View CV</a></li>
-            <li class="toggle-container">
-                <label class="switch">
-                    <input type="checkbox" id="dark-mode-toggle" onclick="toggleDarkMode()">
-                    <span class="slider"></span>
+            <li><a href="CV.pdf" target="_blank"><i class="fas fa-file-pdf"></i> View CV</a></li>
+            <li>
+                <label>
+                    <input type="checkbox" id="dark-toggle" onclick="toggleDarkMode()">
+                    Dark Mode
                 </label>
             </li>
         </ul>
     </nav>
 
+    <!-- Main Content -->
     <main>
-        <div>
-            <img src="profile_picture.jpg" alt="Profile Picture" class="profile-image">
+        <!-- Profile Card -->
+        <div class="card">
+            <img src="profile_picture.jpg" alt="Profile Picture" class="profile-img">
+            <h1>Rahul Goraniya</h1>
+            <p>I am a Computer Science student passionate about algorithms, complexity theory, and graph theory.</p>
         </div>
-        <div class="content">
-            <section>
-                <h2>Rahul Goraniya</h2>
-                <p>Hello! I am a computer science student passionate about algorithms, complexity theory, and graph theory. I am currently working on an exciting research project for my undergraduate thesis in theoretical computer science.</p>
-            </section>
-            <section>
-                <h2>Current Research</h2>
-                <ul>
-                    <li><strong>Title:</strong> Reduction of Matrix Tiling to Matrix Tiling ≤</li>
-                    <li><strong>Status:</strong> In Progress</li>
-                    <li><strong>Description:</strong> I am exploring reductions in parameterized complexity for combinatorial problems, trying to establish lower bounds for them.</li>
-                </ul>
-                <a href="Mt_l_reduction.pdf" download class="download-link">Download</a>
-                <a class="preview-link" onclick="showPreview()">Preview</a>
-                <div id="pdf-preview" style="display: none;">
-                    <iframe src="Mt_l_reduction.pdf"></iframe>
-                </div>
-            </section>
+
+        <!-- Research Card -->
+        <div class="card">
+            <h2>Current Research</h2>
+            <p><strong>Reduction of Matrix Tiling to Matrix Tiling ≤</strong></p>
+            <p>Exploring reductions in parameterized complexity to establish lower bounds.</p>
+            <a href="Mt_l_reduction.pdf" class="button" download><i class="fas fa-download"></i> Download</a>
+            <iframe src="Mt_l_reduction.pdf"></iframe>
         </div>
     </main>
 
     <script>
-        const darkModeToggle = document.getElementById("dark-mode-toggle");
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            document.body.classList.add("dark");
-            darkModeToggle.checked = true;
-        }
-
         function toggleDarkMode() {
-            document.body.classList.toggle("dark");
-        }
-
-        function showPreview() {
-            const preview = document.getElementById("pdf-preview");
-            preview.style.display = preview.style.display === "none" ? "block" : "none";
+            document.body.classList.toggle('dark');
         }
     </script>
 </body>
 </html>
-
